@@ -37,11 +37,24 @@ def check_answer(pos_list):
 
 
 right_answers = []
+missing_states = []
 while len(right_answers) < STATE_COUNT:
     answer_state = screen.textinput(title=f"Guess The State {len(right_answers)}/50",
                                     prompt="What's another state?").title()
 
     if answer_state == "Exit":
+
+        # finding missed states
+        states = data["state"].values.tolist()
+        for state in states:
+            if state not in right_answers:
+                missing_states.append(state)
+
+        # creating a dataframe and a csv file out of missed states
+        df = pd.DataFrame({"Missed States": missing_states})
+        df.to_csv("states_to_learn.csv")
+        print(df)
+        print(f"You missed {len(missing_states)} in total.")
         break
 
     # get position values from the dataframe as a 2D list [[x, y]]
