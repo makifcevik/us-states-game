@@ -46,9 +46,7 @@ while len(right_answers) < STATE_COUNT:
 
         # finding missed states
         states = data["state"].values.tolist()
-        for state in states:
-            if state not in right_answers:
-                missing_states.append(state)
+        missing_states = [state for state in states if state not in right_answers]
 
         # creating a dataframe and a csv file out of missed states
         df = pd.DataFrame({"Missed States": missing_states})
