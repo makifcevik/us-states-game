@@ -2,6 +2,8 @@
 
 This is a U.S. State guessing game implemented in Python using the tkinter and pandas library. The game tests your knowledge of U.S. states and their capitals. You'll be presented with a blank U.S. map, and your task is to guess the name of a state and it will be shown on the map if it is correct! The game is designed to be both fun and educational.
 
+<img src="./blank_states_img.gif">
+
 ## Features
 
 - Interactive U.S. State guessing game.
