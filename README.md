@@ -33,4 +33,4 @@ You can install Pandas using the following command:
 4. Run the game using the following command:
 
    ```bash
-   python us_state_game.py
+   python main.py
